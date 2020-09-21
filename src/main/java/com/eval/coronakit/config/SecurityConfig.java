@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
