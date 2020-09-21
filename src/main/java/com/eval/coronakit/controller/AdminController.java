@@ -30,6 +30,7 @@ public class AdminController {
 	
 	@GetMapping("/product-entry")
 	public String productEntry(Model model) {
+		
 		return null;
 	}
 	
@@ -44,7 +45,7 @@ public class AdminController {
 		return null;
 	}
 	
-	@DeleteMapping("/product-delete/{productId}")
+	@GetMapping("/product-delete/{productId}")
 	public String productDelete(@PathVariable("productId") int productId) {
 		return null;
 	}
