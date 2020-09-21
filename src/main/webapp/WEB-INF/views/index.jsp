@@ -11,6 +11,5 @@
 <hr/>
 <a href="${pageContext.request.contextPath}/custom-login"><input type="button" value="Login" /></a>
 <hr/>
-<a href="${pageContext.request.contextPath}/register"><input type="button" value="Register" /></a>
 </body>
 </html>
