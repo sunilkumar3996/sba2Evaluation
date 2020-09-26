@@ -17,11 +17,11 @@
 	<br/>
 	<br/>
 	<label>Enter user name</label>
-	<input type="text" name="username" />
+	<input type="text" name="username" required/>
 	<br/>
 	<br/>
 	<label>Enter password</label>
-	<input type="password" name="password" />
+	<input type="password" name="password" required/>
 	<br/>
 	<br/>
 	<input type="submit" value="Login" />

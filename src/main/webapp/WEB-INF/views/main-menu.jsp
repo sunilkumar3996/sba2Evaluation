@@ -12,9 +12,12 @@
 
 <h2>Hello <security:authentication property="principal.username"/></h2>
 <br/>
-<spring-form:form action="${pageContext.request.contextPath}/logout" method="POST">
+<%-- <spring-form:form action="${pageContext.request.contextPath}/logout" method="POST">
 <input type="submit" value="Logout">
-</spring-form:form>
+</spring-form:form>  --%>
+<%-- <%@ include file="header.jsp" %> --%>
+<br>
+<br>
 <hr/>
 <h1>Welcome to Corona Kit Dashboard!!!</h1>
 
@@ -28,6 +31,8 @@
 	<a href="${pageContext.request.contextPath}/user/home">USER DASHBOARD</a>
 </security:authorize>
 
-
+<br>
+<br>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

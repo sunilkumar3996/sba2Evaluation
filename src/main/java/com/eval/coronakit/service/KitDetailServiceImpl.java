@@ -17,7 +17,7 @@ public class KitDetailServiceImpl implements KitDetailService {
 	@Override
 	public KitDetail addKitItem(KitDetail kitItem) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.repository.save(kitItem);
 	}
 
 	@Override

@@ -15,7 +15,7 @@ public class CoronaKitServiceImpl implements CoronaKitService {
 	@Override
 	public CoronaKit saveKit(CoronaKit kit) {
 		// TODO Auto-generated method stub
-		return null;
+		 return this.repository.save(kit);
 	}
 
 	@Override

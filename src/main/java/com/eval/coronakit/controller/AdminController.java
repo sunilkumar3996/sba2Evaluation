@@ -2,6 +2,10 @@ package com.eval.coronakit.controller;
 
 
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,29 +28,42 @@ public class AdminController {
 	
 	@GetMapping("/home")
 	public String home() {
-		return null;
+		return "admin-home";
 	}
 	
 	@GetMapping("/product-entry")
 	public String productEntry(Model model) {
 		
-		return null;
+		ProductMaster product = new ProductMaster();  // empty bag
+		model.addAttribute("product", product);
+		
+		return "add-new-item";
 	}
 	
 	@PostMapping("/product-save")
-	public String productSave(@ModelAttribute ProductMaster product, BindingResult result ) {
-		return null;
+	public String productSave(@Valid @ModelAttribute("product") ProductMaster product, BindingResult result) {
+		
+		if(result.hasErrors()) {
+			return "add-new-item";
+		}
+		
+		this.productService.addNewProduct(product);
+		
+		return "redirect:/admin/product-list";
 	}
 	
 
 	@GetMapping("/product-list")
 	public String productList(Model model) {
-		return null;
+		List<ProductMaster> products = this.productService.getAllProducts();
+		model.addAttribute("products", products);
+		return "show-all-item-admin";
 	}
 	
 	@GetMapping("/product-delete/{productId}")
 	public String productDelete(@PathVariable("productId") int productId) {
-		return null;
+		this.productService.deleteProduct(productId);
+		return "redirect:/admin/product-list";
 	}
 	
 }

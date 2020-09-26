@@ -17,25 +17,28 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductMaster addNewProduct(ProductMaster product) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.repository.save(product);
 	}
 
 	@Override
 	public List<ProductMaster> getAllProducts() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.repository.findAll();
 	}
 
 	@Override
 	public ProductMaster deleteProduct(int productId) {
 		// TODO Auto-generated method stub
-		return null;
+		ProductMaster product = this.getProductById(productId);
+		if(product != null)
+			this.repository.deleteById(productId);
+		return product;
 	}
 
 	@Override
 	public ProductMaster getProductById(int productId) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.repository.findById(productId).orElse(null);
 	}
 
 }
